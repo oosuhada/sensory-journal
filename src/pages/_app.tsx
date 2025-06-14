@@ -11,7 +11,6 @@ import { setCookies } from 'cookies-next';
 import { getUser, IUser, refreshAccessToken } from '@/apis/user';
 import { $userSession } from '@/recoil/atoms';
 import { initAxiosConfig, initAxiosRefreshConfig } from '@/configs/axios';
-import awesome from '@/utils/awesome';
 import mutedConsole from '@/utils/muteConsole';
 import { theme, GlobalStyle } from '@/themes';
 import queryClient from '@/configs/queryClient';
@@ -21,7 +20,6 @@ import { setAuthHeader } from '@/utils/auth';
 import { isServer } from '@/utils/isServer';
 
 initAxiosConfig();
-awesome();
 
 if (!isServer()) {
   initAxiosRefreshConfig();

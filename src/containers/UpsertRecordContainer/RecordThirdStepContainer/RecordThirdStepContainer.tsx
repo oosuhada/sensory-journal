@@ -167,7 +167,6 @@ const RecordThirdStepContainer: React.FC<RecordThirdStepContainerProps> = ({
     <StyledEntityForm
       onSubmit={!record ? handleCreateSubmit : handleUpdateSubmit}
       defaultValues={defaultValues}
-      showDebug={false}
     >
       <StyledWrapper>
         <h2>{'당신만의 맥주 이야기도 들려주세요'}</h2>

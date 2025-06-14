@@ -171,7 +171,9 @@ const Tab = ({
           const isSelected = activatedIndex === index;
           return (
             <StyledTabItem
-              ref={(element) => (tabItemRefs.current[index] = element)}
+              ref={(element) => {
+                tabItemRefs.current[index] = element;
+              }}
               key={tabItem}
               isSelected={isSelected}
               aria-checked={isSelected}

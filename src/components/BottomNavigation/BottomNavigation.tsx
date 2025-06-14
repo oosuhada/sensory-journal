@@ -35,14 +35,14 @@ export default function BottomNavigation() {
           </a>
         </Link>
         <PlusIconButton onClick={() => router.push('/search')} />
-        <Link href="/sensory" passHref>
-          <a className={`nav-link ${router.pathname === '/sensory' ? 'active' : ''}`}>
-            {router.pathname === '/sensory' ? (
+        <Link href="/records/my" passHref>
+          <a className={`nav-link ${router.pathname === '/records/my' ? 'active' : ''}`}>
+            {router.pathname === '/records/my' ? (
               <Icon name="NavTravelActive" size={36} />
             ) : (
               <Icon name="NavTravel" size={36} />
             )}
-            <span>감각기록</span>
+            <span>여행목록</span>
           </a>
         </Link>
         <Link href="/profile" passHref>

@@ -96,7 +96,6 @@ const RecordSecondStepContainer: React.FC<RecordSecondStepContainerProps> = ({
       <EntityForm
         onSubmit={handleSubmit}
         defaultValues={{ flavorIds: defaultFlavorValue?.map((flavor) => flavor.id) }}
-        showDebug={false}
       >
         <h2>{'맥주 맛은 어땠나요?'}</h2>
         <p className="body-2">{beerName}</p>

@@ -7,7 +7,7 @@ import { useModal } from '@/hooks';
 import LoginRequestModal from '@/components/LoginRequestModal';
 
 const hasAuth =
-  <T extends any>(Component: React.FC<T> | NextPage<T>): React.FC<T> =>
+  <T extends object>(Component: React.ComponentType<T> | NextPage<T>): React.FC<T> =>
   // eslint-disable-next-line react/display-name
   (props) => {
     const { isOpen, close } = useModal(true);

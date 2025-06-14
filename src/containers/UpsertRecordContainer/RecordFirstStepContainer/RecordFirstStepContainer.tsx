@@ -62,7 +62,6 @@ const RecordFirstStepContainer: React.FC<RecordFirstStepContainerProps> = ({
     <StyledEntityForm
       onSubmit={handleSubmit}
       defaultValues={{ feel: defaultFeelValue || 3 }}
-      showDebug={false}
       className={className}
     >
       <StyledTitle>이번 맥주는 어땠나요?</StyledTitle>

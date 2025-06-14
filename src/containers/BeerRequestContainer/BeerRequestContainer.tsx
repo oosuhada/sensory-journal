@@ -47,7 +47,7 @@ const BeerRequestContainer: NextPage = () => {
   return (
     <>
       <Header leftExtras={<BackButton />} />
-      <StyledEntityForm onSubmit={handleSubmit} showDebug={false}>
+      <StyledEntityForm onSubmit={handleSubmit}>
         <BeerRequestLayout title={`등록할 맥주의 정보를\n입력해 주세요`}>
           <StyledFieldsWrapper>
             <MultiImageUploadField
