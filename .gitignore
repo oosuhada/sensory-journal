@@ -17,6 +17,7 @@ tsconfig.tsbuildinfo
 # env
 .env
 .env.*
+!.env.example
 
 # Sentry
 .sentryclirc

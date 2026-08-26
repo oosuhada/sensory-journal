@@ -72,8 +72,8 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   const { ctx } = appContext;
   const cookie = ctx.req ? ctx.req.headers.cookie : null;
 
-  if (process.env.NEXT_PUBLIC_LOCAL_TOKEN) {
-    setCookies('accessToken', process.env.NEXT_PUBLIC_LOCAL_TOKEN, ctx);
+  if (ctx.req && process.env.LOCAL_DEV_TOKEN) {
+    setCookies('accessToken', process.env.LOCAL_DEV_TOKEN, ctx);
   }
 
   let user: IUser | undefined;
