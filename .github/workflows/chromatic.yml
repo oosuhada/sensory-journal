@@ -11,14 +11,21 @@ jobs:
   test:
     # Operating System
     runs-on: ubuntu-latest
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      ACTION_TOKEN: ${{ secrets.ACTION_TOKEN }}
     # Job steps
     steps:
-      - uses: actions/checkout@v1
-      - run: yarn
+      - uses: actions/checkout@v4
+      - run: yarn install --frozen-lockfile
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
+        if: env.CHROMATIC_PROJECT_TOKEN != '' && env.ACTION_TOKEN != ''
         # Options required for Chromatic's GitHub Action
         with:
           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.ACTION_TOKEN }}
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          ACTION_TOKEN: ${{ secrets.ACTION_TOKEN }}
